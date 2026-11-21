@@ -944,19 +944,22 @@ setupAds();
 
 /* Chave da CARTO (fica visível no código da página, como em qualquer app web) */
 const CARTO_KEY="cb1_5dnn_1_35f76b917015cfdd1a3b5b88";
-let base,prov=0,tilesOk=false,tileErr=0;
+let base,prov=0,tLoad=0,tErr=0;
+const CARTO_ATTR='© <a href="https://www.openstreetmap.org/copyright">OSM</a> © <a href="https://carto.com/attributions">CARTO</a>';
 const PROVIDERS=[
-  d=>({url:"https://basemaps.cartocdn.com/"+(d?"dark_all":"rastertiles/voyager")+"/{z}/{x}/{y}{r}.png?key="+CARTO_KEY,o:{attribution:'© <a href="https://www.openstreetmap.org/copyright">OSM</a> © <a href="https://carto.com/attributions">CARTO</a>'}}),
+  d=>({url:"https://basemaps.cartocdn.com/"+(d?"dark_all":"rastertiles/voyager")+"/{z}/{x}/{y}{r}.png?key="+CARTO_KEY,o:{attribution:CARTO_ATTR}}),
+  d=>({url:"https://{s}.basemaps.cartocdn.com/"+(d?"dark_all":"rastertiles/voyager")+"/{z}/{x}/{y}{r}.png",o:{subdomains:"abcd",attribution:CARTO_ATTR}}),
   ()=>({url:"https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",o:{attribution:'Mapa © Esri, OSM'}}),
   ()=>({url:"https://tile.openstreetmap.org/{z}/{x}/{y}.png",o:{attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}})
 ];
+/* Troca de servidor de mapa quando a maioria das imagens falha (ex.: chave recusada nesse domínio). */
 function setBase(){
   if(base) map.removeLayer(base);
-  const p=PROVIDERS[prov](dark());tileErr=0;
+  const p=PROVIDERS[prov](dark());tLoad=0;tErr=0;
   base=L.tileLayer(p.url,Object.assign({maxZoom:19},p.o)).addTo(map);
-  base.on("tileload",()=>{tilesOk=true;$("blocked").hidden=true});
-  base.on("tileerror",()=>{if(tilesOk)return;tileErr++;
-    if(tileErr>=4){if(prov<PROVIDERS.length-1){prov++;setBase()}else showBlocked()}});
+  base.on("tileload",()=>{tLoad++;$("blocked").hidden=true});
+  base.on("tileerror",()=>{tErr++;
+    if(tErr>=4&&tErr>tLoad*2){if(prov<PROVIDERS.length-1){prov++;setBase()}else showBlocked()}});
   base.bringToBack();
 }
 function showBlocked(){$("blocked").hidden=false}
