@@ -1282,7 +1282,7 @@ function interstitial(){
 $("modalclose").addEventListener("click",()=>{$("modal").hidden=true});
 
 /* ---------- Radar RainViewer ---------- */
-$("radar").addEventListener("click",async()=>{
+async function toggleRadar(){
   const btn=$("radar");
   if(radarLayer){map.removeLayer(radarLayer);radarLayer=null;btn.classList.remove("on");btn.setAttribute("aria-pressed","false");$("radarinfo").hidden=true;return}
   try{
@@ -1294,7 +1294,10 @@ $("radar").addEventListener("click",async()=>{
     $("radarinfo").textContent="Radar de "+hm(new Date(fr.time*1000));$("radarinfo").hidden=false;
   }catch(e){showErr("O radar de chuva não está disponível agora.")}
   finally{btn.textContent="Radar de chuva"}
-});
+}
+$("radar").addEventListener("click",toggleRadar);
+/* Radar ligado por padrão */
+toggleRadar();
 
 /* ---------- Estado inicial ---------- */
 const saved=store.get("last");
