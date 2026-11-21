@@ -804,6 +804,8 @@ footer.attr{padding:14px 16px 20px;font-size:12px;color:var(--muted);display:fle
   header.top{display:none}
   .mobilehead{display:flex!important}
 }
+.lang-mobile{display:none!important}
+@media (max-width:820px){.lang-mobile{display:inline-block!important}}
 .mobilehead{display:none;position:absolute;z-index:900;left:calc(12px + env(safe-area-inset-left,0px));top:calc(12px + env(safe-area-inset-top,0px));background:var(--asphalt);color:#fff;border-radius:8px;padding:6px 10px;align-items:center;gap:8px;font:700 17px/1 var(--f-display);letter-spacing:.04em;text-transform:uppercase}
 </style>
 </head>
@@ -817,7 +819,8 @@ footer.attr{padding:14px 16px 20px;font-size:12px;color:var(--muted);display:fle
       <div class="sign" aria-hidden="true">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round"><path d="M7 15a5 5 0 1 1 9.6-2H18a3.5 3.5 0 0 1 0 7H8"/><path d="M9 21l1-2M13 21l1-2"/></svg>
       </div>
-      <div class="brand"><h1>Rota &amp; Chuva</h1><p>Chance de chuva em cada trecho, na hora em que você passa por ele</p></div>
+      <div class="brand"><h1 class="notranslate" translate="no">Rota &amp; Chuva</h1><p>Chance de chuva em cada trecho, na hora em que você passa por ele</p></div>
+      <div data-langsel style="margin-left:auto;align-self:flex-start"></div>
     </header>
 
     <form class="section" id="form" autocomplete="off">
@@ -893,9 +896,10 @@ footer.attr{padding:14px 16px 20px;font-size:12px;color:var(--muted);display:fle
   </aside>
 
   <main class="mapwrap">
-    <div id="map" aria-label="Mapa"></div>
+    <div id="map" class="notranslate" translate="no" aria-label="Mapa"></div>
     <div class="mobilehead"><span style="width:10px;height:10px;background:var(--amber);transform:rotate(45deg);display:inline-block"></span>Rota &amp; Chuva</div>
     <div class="mapctl">
+      <div data-langsel class="light lang-mobile"></div>
       <button type="button" id="radar" aria-pressed="false">Radar de chuva</button>
       <span class="radarinfo" id="radarinfo" hidden></span>
     </div>
@@ -943,7 +947,7 @@ function setupAds(){
   document.head.appendChild(sc);}
   document.querySelectorAll("[data-adslot]").forEach(el=>{
     const key=el.dataset.adslot,slot=ADSENSE_SLOTS[key];if(!slot)return;
-    const ins=document.createElement("ins");ins.className="adsbygoogle";ins.style.display="block";
+    const ins=document.createElement("ins");ins.className="adsbygoogle notranslate";ins.style.display="block";
     ins.dataset.adClient=ADSENSE_CLIENT;ins.dataset.adSlot=slot;ins.dataset.adFormat="auto";ins.dataset.fullWidthResponsive="true";
     el.replaceWith(ins);ins.dataset.adslot=key;
   });
@@ -1287,5 +1291,6 @@ else{
 run({silent:true});
 })();
 </script>
+<script src="lang.js" defer></script>
 </body>
 </html>

@@ -27,7 +27,7 @@ header{background:var(--asphalt);color:#fff}
 .bar{max-width:760px;margin:0 auto;padding:14px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:700 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
 .logo i{width:14px;height:14px;background:var(--amber);transform:rotate(45deg);display:inline-block;border:2px solid #000}
-nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto;font-size:15px}
+nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto;font-size:15px;align-items:center}
 nav a{color:#d6dbe0;text-decoration:none} nav a:hover,nav a[aria-current]{color:var(--amber)}
 main{max-width:760px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-left,0px)) 40px}
 h1{font:700 40px/1.1 var(--f-display);margin:0 0 6px;text-wrap:balance}
@@ -46,8 +46,8 @@ small{color:var(--muted)}
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNLXZKDB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header><div class="bar"><a class="logo" href="./"><i></i>Rota &amp; Chuva</a>
-<nav aria-label="Menu"><a href="./">Planejar rota</a><a href="dicas-chuva.html">Dicas na chuva</a><a href="sobre.html">Sobre</a><a href="privacidade.html" aria-current="page">Privacidade</a><a href="contato.html">Contato</a></nav></div></header>
+<header><div class="bar"><a class="logo notranslate" translate="no" href="./"><i></i>Rota &amp; Chuva</a>
+<nav aria-label="Menu"><a href="./">Planejar rota</a><a href="dicas-chuva.html">Dicas na chuva</a><a href="sobre.html">Sobre</a><a href="privacidade.html" aria-current="page">Privacidade</a><a href="contato.html">Contato</a></nav><div data-langsel></div></div></header>
 <main>
 <h1>Política de privacidade</h1>
 <p class="lead">Última atualização: 21 de novembro de 2026.</p>
@@ -99,5 +99,6 @@ small{color:var(--muted)}
 </main>
 <footer><div class="bar"><span>Rota &amp; Chuva · previsão de chuva por trecho para quem anda de moto</span>
 <nav aria-label="Rodapé"><a href="./">Planejar rota</a><a href="dicas-chuva.html">Dicas na chuva</a><a href="sobre.html">Sobre</a><a href="privacidade.html" aria-current="page">Privacidade</a><a href="contato.html">Contato</a></nav></div></footer>
+<script src="lang.js" defer></script>
 </body>
 </html>
