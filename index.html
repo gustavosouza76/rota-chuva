@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6470572515578345" crossorigin="anonymous"></script>
 <style>/* required styles */
 
 .leaflet-pane,
@@ -922,14 +923,14 @@ map.attributionControl.setPrefix(false);
    Preencha com os dados da sua conta. Enquanto ADSENSE_CLIENT estiver vazio, a página mostra os espaços simulados.
    Os anúncios só aparecem com a página publicada num site aprovado no AdSense (não funcionam abrindo o arquivo do computador). */
 const ADSENSE_CLIENT="ca-pub-6470572515578345";          /* ex.: "ca-pub-1234567890123456" */
-const ADSENSE_SLOTS={top:"",bottom:""}; /* IDs dos blocos de anúncio (data-ad-slot) */
+const ADSENSE_SLOTS={top:"7503537064",bottom:"4650143011"}; /* IDs dos blocos de anúncio (data-ad-slot) */
 const ADSENSE_ON=/^ca-pub-\d+$/.test(ADSENSE_CLIENT)&&location.protocol.startsWith("http");
 const adPushed={};
 function setupAds(){
   if(!ADSENSE_ON) return;
-  const sc=document.createElement("script");sc.async=true;sc.crossOrigin="anonymous";
+  if(!document.querySelector('script[src*="adsbygoogle.js"]')){const sc=document.createElement("script");sc.async=true;sc.crossOrigin="anonymous";
   sc.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+ADSENSE_CLIENT;
-  document.head.appendChild(sc);
+  document.head.appendChild(sc);}
   document.querySelectorAll("[data-adslot]").forEach(el=>{
     const key=el.dataset.adslot,slot=ADSENSE_SLOTS[key];if(!slot)return;
     const ins=document.createElement("ins");ins.className="adsbygoogle";ins.style.display="block";
