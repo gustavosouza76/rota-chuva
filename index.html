@@ -766,6 +766,8 @@ table.legs tr:hover td{background:var(--field)}
 .bar{display:inline-block;width:10px;height:22px;border-radius:2px;vertical-align:middle}
 .tablewrap{overflow-x:auto}
 
+.sitelinks{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.sitelinks a{color:var(--link);font-weight:500}
 footer.attr{padding:14px 16px 20px;font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:6px;margin-top:auto}
 
 .mapctl{position:absolute;z-index:900;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:8px;align-items:flex-end}
@@ -832,6 +834,7 @@ footer.attr{padding:14px 16px 20px;font-size:12px;color:var(--muted);display:fle
         </div>
       </div>
       <div class="err" id="err" hidden></div>
+      <a class="ghost" href="dicas-chuva.html" style="text-decoration:none">Vai pegar chuva? Veja as dicas para pilotar com segurança</a>
       <button type="submit" class="go" id="go">Ver chuva na rota</button>
     </form>
 
@@ -873,7 +876,7 @@ footer.attr{padding:14px 16px 20px;font-size:12px;color:var(--muted);display:fle
     <div class="adwrap" id="ad-bottom" hidden><div class="ad rect" data-adslot="bottom" role="note" aria-label="Espaço de anúncio"><div><b>Anúncio · retângulo 300×250</b>Espaço reservado para AdSense</div></div></div>
 
     <footer class="attr">
-      <span>MVP de demonstração. Os espaços de anúncio são marcadores de lugar, sem anúncios reais.</span>
+      <nav class="sitelinks" aria-label="Páginas do site"><a href="dicas-chuva.html">Dicas para pilotar na chuva</a><a href="sobre.html">Sobre</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></nav>
       <span>Mapa © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>, estilo © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>. Rotas: <a href="https://project-osrm.org" target="_blank" rel="noopener">OSRM</a>. Busca: <a href="https://photon.komoot.io" target="_blank" rel="noopener">Photon</a> / Nominatim. Previsão: <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> (CC BY 4.0). Radar: <a href="https://www.rainviewer.com" target="_blank" rel="noopener">RainViewer</a>.</span>
     </footer>
   </aside>

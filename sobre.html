@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sobre · Rota &amp; Chuva</title>
+<meta name="description" content="O que é o Rota & Chuva e como ele calcula a chance de chuva em cada trecho da sua viagem de moto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6470572515578345" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#f3f4f2;--panel:#fff;--ink:#1b1f23;--muted:#5e6670;--line:#dde0dc;--asphalt:#1d2126;--amber:#f2a900;--link:#0b63b6;
+--f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--f-body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#111417;--panel:#181c20;--ink:#e9ebe8;--muted:#9aa3ab;--line:#2a3036;--asphalt:#0c0e10;--amber:#f5b51f;--link:#6cb4ff;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f-body)}
+a{color:var(--link)}
+header{background:var(--asphalt);color:#fff}
+.bar{max-width:760px;margin:0 auto;padding:14px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:700 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.03em}
+.logo i{width:14px;height:14px;background:var(--amber);transform:rotate(45deg);display:inline-block;border:2px solid #000}
+nav{display:flex;gap:14px;flex-wrap:wrap;margin-left:auto;font-size:15px}
+nav a{color:#d6dbe0;text-decoration:none} nav a:hover,nav a[aria-current]{color:var(--amber)}
+main{max-width:760px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-left,0px)) 40px}
+h1{font:700 40px/1.1 var(--f-display);margin:0 0 6px;text-wrap:balance}
+h2{font:700 26px/1.2 var(--f-display);margin:34px 0 8px;text-wrap:balance}
+h3{font:600 20px/1.3 var(--f-display);margin:22px 0 4px}
+.lead{font-size:19px;color:var(--muted);margin:0 0 20px}
+p,li{max-width:68ch}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.cta{display:inline-block;background:var(--amber);color:#111;border:2px solid #111;border-radius:10px;padding:10px 18px;font:700 18px/1 var(--f-display);text-transform:uppercase;letter-spacing:.05em;text-decoration:none;margin-top:6px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .bar{color:var(--muted)} footer a{color:var(--muted)}
+small{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="logo" href="./"><i></i>Rota &amp; Chuva</a>
+<nav aria-label="Menu"><a href="./">Planejar rota</a><a href="dicas-chuva.html">Dicas na chuva</a><a href="sobre.html" aria-current="page">Sobre</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></nav></div></header>
+<main>
+<h1>Sobre o Rota &amp; Chuva</h1>
+<p class="lead">Um planejador de viagem feito por quem anda de moto, para responder uma pergunta simples: vou pegar chuva no caminho?</p>
+
+<p>Os aplicativos de previsão do tempo mostram a chuva de uma cidade de cada vez. Os aplicativos de navegação mostram o caminho, mas não o céu. Quem viaja de moto acaba abrindo os dois, tentando adivinhar se a nuvem que está sobre a serra agora ainda vai estar lá quando chegar a sua vez de passar. O Rota &amp; Chuva junta as duas coisas numa tela só.</p>
+
+<h2>Como funciona</h2>
+<ol>
+<li><strong>Você informa saída, destino e horário.</strong> Pode ser agora, daqui a uma hora ou amanhã cedo.</li>
+<li><strong>O app traça a rota</strong> e divide o caminho em trechos de tamanho parecido, normalmente de 8 a 15 km.</li>
+<li><strong>Para cada trecho, ele estima a que horas você vai passar por ali</strong>, usando o tempo de viagem calculado para a rota.</li>
+<li><strong>Ele consulta a previsão horária daquele ponto, naquele horário</strong>, e pinta o trecho de verde, amarelo, laranja ou vermelho conforme a chance de chuva.</li>
+<li><strong>Por fim, testa outros horários de saída</strong> nas próximas seis horas e avisa se sair um pouco antes ou depois diminui a chance de pegar chuva.</li>
+</ol>
+<p>Quando o planejamento estiver pronto, um toque abre a mesma rota no Google Maps ou no Waze para você navegar normalmente.</p>
+
+<h2>De onde vêm os dados</h2>
+<ul>
+<li><strong>Mapa:</strong> OpenStreetMap, com estilo da CARTO.</li>
+<li><strong>Rotas:</strong> OSRM, um roteador de código aberto baseado no OpenStreetMap.</li>
+<li><strong>Busca de endereços:</strong> Photon e Nominatim.</li>
+<li><strong>Previsão do tempo:</strong> Open-Meteo, que reúne modelos meteorológicos de vários institutos nacionais (licença CC BY 4.0).</li>
+<li><strong>Radar de chuva:</strong> RainViewer.</li>
+</ul>
+
+<h2>Limites que você precisa conhecer</h2>
+<p>Previsão do tempo é probabilidade, não certeza. Uma chance de 30% significa que, em situações parecidas, chove em cerca de três de cada dez vezes. Pancadas de verão são localizadas e podem aparecer sem aviso. O tempo estimado de viagem também não conta paradas, trânsito pesado ou obras. Use o Rota &amp; Chuva para decidir melhor, e não para dispensar a capa de chuva no baú.</p>
+
+<div class="box"><strong>Gratuito e com anúncios.</strong> O Rota &amp; Chuva é gratuito. Os anúncios aparecem só nas telas de planejamento, nunca durante a viagem, e ajudam a manter o projeto no ar.</div>
+
+<a class="cta" href="./">Planejar minha rota</a>
+</main>
+<footer><div class="bar"><span>Rota &amp; Chuva · previsão de chuva por trecho para quem anda de moto</span>
+<nav aria-label="Rodapé"><a href="./">Planejar rota</a><a href="dicas-chuva.html">Dicas na chuva</a><a href="sobre.html" aria-current="page">Sobre</a><a href="privacidade.html">Privacidade</a><a href="contato.html">Contato</a></nav></div></footer>
+</body>
+</html>
